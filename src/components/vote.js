@@ -11,10 +11,10 @@ class Vote extends React.Component {
     render() {
         const p = this.props;
         return (
-            <div>
-                <a onClick={this.upVote}> <span className="glyphicon glyphicon-arrow-up"></span></a>
+            <div className="arrow">
+                <p><a onClick={this.upVote} className="glyphicon glyphicon-arrow-up"> </a></p>
                 <p>{p.ups - p.downs}</p>
-                <a onClick={this.downVote}><span className="glyphicon glyphicon-arrow-down"></span></a>
+                <p><a onClick={this.downVote} className="glyphicon glyphicon-arrow-down"></a></p>
             </div>
         );
     }
