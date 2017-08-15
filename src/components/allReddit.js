@@ -4,9 +4,14 @@ import { connect } from 'react-redux';
 import { fetchReddits } from '../actions';
 import Reddit from './reddit';
 class AllReddit extends React.Component {
-    fetchReddits = () => {
+    /* Tips:
+    -componentDidMount() run right after the component mounted. 
+    -Methods prefix with "will" are run before component mount and render happen
+    - Methods prefix with "Did" are run after the component mount. If you want to interact with the browser, here is good place. 
+     Do not setState() here! It causes re-rendering.*/
+    componentDidMount(){
         this.props.fetchReddits();
-    };
+    }
 
     render() {
         const p = this.props;
@@ -20,8 +25,7 @@ class AllReddit extends React.Component {
         }
         return (
             <div>
-                <button onClick={this.fetchReddits}>click</button>
-                <ul>{redditList}</ul>
+                <ul className="container">{redditList}</ul>
             </div>
         );
     }
