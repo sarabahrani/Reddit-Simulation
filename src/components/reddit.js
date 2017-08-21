@@ -5,9 +5,9 @@ class Reddit extends React.Component {
         const p = this.props.data;
         let thumbnail = {};
         if (p.thumbnail == "self")
-            thumbnail = <img className="thumbnail self" />
+            thumbnail = <img className="thumbnail self" />;
         else
-            thumbnail = <img src={p.thumbnail} />
+            thumbnail = <img src={p.thumbnail} />;
 
         return (
             <div id="reddit">
